@@ -11,7 +11,7 @@ public class  QuizGame{
             new Question("What particle has no electric charge?", "Neutron", "Physics"),
             new Question("What is the phenomenon called that causes a straw to appear to bend in water?", "Refraction", "Physics"),
             new Question("What is the unit of frequency?", "Hertz", "Physics"),
-            new Question("What force keeps a race car from losing control when going around a bend?", "", "Physics"),
+            new Question("What force keeps a race car from losing control when going around a bend?", "Centripetal Force", "Physics"),
             new Question("What is the exchange particle for the electromagnetic force?", "Photon", "Physics")
         };
 
@@ -38,7 +38,33 @@ public class  QuizGame{
             new Question("Who was the first woman to win a Nobel Prize?", "Marie Curie", "General knowledge"),
             new Question("What country has the most world cups?","Brazil", "General knowledge"),
             };
+        
+
+        System.out.println("=== WELCOME TO DAVID AFOLAYAN'S QUIZ GAME ===");
+        System.out.println("Please select one of the following categories: Physics, Maths, Geography, General Knowledge");
+        String categoryChoice = scanner.nextLine().toLowerCase();
+
+        Question[] selectedCategory;
+
+        if (categoryChoice.equals("Physics")) {
+            selectedCategory = physicsQuestions;
+        }
+        
+        else if (categoryChoice.equals("Maths")) {
+            selectedCategory = mathsQuestions;
+        }
+
+        else if (categoryChoice.equals("Geography")) {
+            selectedCategory = geographyQuestions;
+        }
+
+        else {
+            selectedCategory = generalQuestions;
+        }
+        }
+        
+
         };
 
 
-}
+
