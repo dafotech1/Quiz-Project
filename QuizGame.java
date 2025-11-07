@@ -1,8 +1,9 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class  QuizGame{
     private static Scanner scanner = new Scanner(System.in);
-    private static int score;
+    private static int score = 0;
 
     public static void main(String[] args) {
 
@@ -16,7 +17,7 @@ public class  QuizGame{
         System.out.println("=== WELCOME TO DAVID AFOLAYAN'S QUIZ GAME ===");
         System.out.println("Please select one of the following categories: Physics, Maths, Geography, General Knowledge");
 
-        String categoryChoice = scanner.nextLine().toLowerCase();
+        String categoryChoice = scanner.nextLine();
         Question[] selectedCategory;
 
         if (categoryChoice.equals("Physics")) {
@@ -34,6 +35,26 @@ public class  QuizGame{
         else {
             selectedCategory = generalQuestions;
         }
+
+
+        System.out.println("You have selected " + categoryChoice + " as your category of choice.");
+        System.out.println("=== The Quiz is now starting!!! ===");
+
+        for (Question q : selectedCategory) {
+            System.out.println("Question 1: " + q.getQuestionText());
+            String userAnswer = scanner.nextLine();
+
+            {
+
+            }
+                
+
+        }
+
+
+
+
+
         }
         
 
