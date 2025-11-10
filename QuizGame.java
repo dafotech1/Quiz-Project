@@ -13,9 +13,16 @@ public class  QuizGame{
         Question[] geographyQuestions = QuestionBank.getGeographyQuestions();
         Question[] generalQuestions = QuestionBank.getGeneralQuestions();
 
+        System.out.println("""
+                === WELCOME TO DAVID AFOLAYAN'S QUIZ GAME ===
 
-        System.out.println("=== WELCOME TO DAVID AFOLAYAN'S QUIZ GAME ===");
-        System.out.println("Please select one of the following categories: Physics, Maths, Geography, General Knowledge");
+                Choose one of the following 4 categories!
+
+                1. Physics
+                2. Maths
+                3. Geography
+                4. General Knowledge
+                """);
 
         String categoryChoice = scanner.nextLine();
         Question[] selectedCategory;
@@ -24,7 +31,7 @@ public class  QuizGame{
             selectedCategory = physicsQuestions;
         }
         
-        else if (categoryChoice.equals("Maths")) {
+        else if (categoryChoice.equals("Maths") ) {
             selectedCategory = mathsQuestions;
         }
 
@@ -41,24 +48,20 @@ public class  QuizGame{
         System.out.println("=== The Quiz is now starting!!! ===");
 
         for (Question q : selectedCategory) {
-            System.out.println("Question 1: " + q.getQuestionText());
+            System.out.println("Question " + q.getQuestionText());
             String userAnswer = scanner.nextLine();
 
-            {
-
+            if (q.checkAnswer(userAnswer)) {
+                System.out.println(userAnswer + " is the correct answer!");
+                score++;
+                System.out.println("Your score now is " + score + " points.");
             }
-                
-
+            else{
+                System.out.println("Your answer is incorrect :(");
+                System.out.println("Your score remains " + score + " points.");
+            }
         }
-
-
-
-
-
-        }
-        
-
-        };
-
+    };
+};
 
 
