@@ -24,31 +24,50 @@ public class  QuizGame{
                 4. General Knowledge
                 """);
 
-        String categoryChoice = scanner.nextLine();
-        Question[] selectedCategory;
+        boolean  invalidAnswer = true;
+        Question selectedCategory[] = null;
+        
 
-        if (categoryChoice.equals("Physics")) {
+        while (invalidAnswer) {
+        
+        String categoryChoice = scanner.nextLine();
+        
+        
+
+        if (categoryChoice.equals("Physics") || categoryChoice.equals("1")) {
             selectedCategory = physicsQuestions;
+            invalidAnswer = false;
+            System.out.println("You have selected " + categoryChoice + " as your category of choice.");
         }
         
-        else if (categoryChoice.equals("Maths") ) {
+        else if (categoryChoice.equals("Maths") || categoryChoice.equals("2")) {
             selectedCategory = mathsQuestions;
+            invalidAnswer = false;
+            System.out.println("You have selected " + categoryChoice + " as your category of choice.");
         }
 
-        else if (categoryChoice.equals("Geography")) {
+        else if (categoryChoice.equals("Geography") || categoryChoice.equals("3")) {
             selectedCategory = geographyQuestions;
+            invalidAnswer = false;
+            System.out.println("You have selected " + categoryChoice + " as your category of choice.");
+        }
+
+        else if (categoryChoice.equals("General Knowledge") || categoryChoice.equals("4")){
+            selectedCategory = generalQuestions;
+            invalidAnswer = false;
+            System.out.println("You have selected " + categoryChoice + " as your category of choice.");
         }
 
         else {
-            selectedCategory = generalQuestions;
+            System.out.println("Invalid answer... please enter either the category name or number. ");
         }
 
+    }
 
-        System.out.println("You have selected " + categoryChoice + " as your category of choice.");
         System.out.println("=== The Quiz is now starting!!! ===");
 
         for (Question q : selectedCategory) {
-            System.out.println("Question " + q.getQuestionText());
+            System.out.println(q.getQuestionText());
             String userAnswer = scanner.nextLine();
 
             if (q.checkAnswer(userAnswer)) {
@@ -56,11 +75,12 @@ public class  QuizGame{
                 score++;
                 System.out.println("Your score now is " + score + " points.");
             }
-            else{
+            else {
                 System.out.println("Your answer is incorrect :( The correct answer was " + q.getAnswer());
                 System.out.println("Your score remains " + score + " points.");
             }
         }
-    };
-};
+    }
+}
+
 
