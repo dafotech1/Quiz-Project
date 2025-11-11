@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class  QuizGame{
     private static Scanner scanner = new Scanner(System.in);
-    private static int score = 0;
 
     public static void main(String[] args) {
 
@@ -12,6 +11,9 @@ public class  QuizGame{
         Question[] mathsQuestions = QuestionBank.getMathsQuestions();
         Question[] geographyQuestions = QuestionBank.getGeographyQuestions();
         Question[] generalQuestions = QuestionBank.getGeneralQuestions();
+        boolean continueProgram = true;
+
+        while (continueProgram) {
 
         System.out.println("""
                 === WELCOME TO DAVID AFOLAYAN'S QUIZ GAME ===
@@ -26,6 +28,7 @@ public class  QuizGame{
 
         boolean  invalidAnswer = true;
         Question selectedCategory[] = null;
+        int score = 0;
         
 
         while (invalidAnswer) {
@@ -80,6 +83,21 @@ public class  QuizGame{
                 System.out.println("Your score remains " + score + " points.");
             }
         }
+
+        System.out.println("You have reached the end of the quiz. Your final score was " + score + " points.");
+        System.out.print("Would you like to select another category or exit the quiz. Please enter 'continue' or 'exit'");
+        String continuationChoice = scanner.nextLine();
+
+        if (continuationChoice.equals("continue")) {
+            System.out.println("You have selected to continue. Quiz restarting... ");
+        }
+
+        else if (continuationChoice.equals("exit")) {
+            System.out.println("Thanks for playing! Exiting Quiz...");
+            continueProgram = false;
+        }
+    }
+
     }
 }
 
