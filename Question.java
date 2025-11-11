@@ -26,6 +26,10 @@ public class Question {
         return category;
     }
 
+    public String getAnswer() {
+        return correctAnswer;
+    }
+
     //This is a method to check the user input matches the correct answers I set in my main program, returning true or false.
     public boolean checkAnswer(String input) {
         return input.equalsIgnoreCase(correctAnswer);

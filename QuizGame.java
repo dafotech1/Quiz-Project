@@ -57,11 +57,10 @@ public class  QuizGame{
                 System.out.println("Your score now is " + score + " points.");
             }
             else{
-                System.out.println("Your answer is incorrect :(");
+                System.out.println("Your answer is incorrect :( The correct answer was " + q.getAnswer());
                 System.out.println("Your score remains " + score + " points.");
             }
         }
     };
 };
-
 
