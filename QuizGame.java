@@ -6,13 +6,14 @@ public class  QuizGame{
 
     public static void main(String[] args) {
 
-        //could possibly add bonus points to some of these questions if answers are more specific.
+        //Gets the questions from my question banks and assigns them as Question variables in my program.
         Question[] physicsQuestions = QuestionBank.getPhysicsQuestions();
         Question[] mathsQuestions = QuestionBank.getMathsQuestions();
         Question[] geographyQuestions = QuestionBank.getGeographyQuestions();
         Question[] generalQuestions = QuestionBank.getGeneralQuestions();
         boolean continueProgram = true;
 
+        // While loop for my main program to allow the user to either continue the Quiz (select another category) or exit the program.
         while (continueProgram) {
 
         System.out.println("""
@@ -36,6 +37,7 @@ public class  QuizGame{
         String categoryChoice = scanner.nextLine();
         
         
+        // user selection process
 
         if (categoryChoice.equals("Physics") || categoryChoice.equals("1")) {
             selectedCategory = physicsQuestions;
@@ -69,6 +71,8 @@ public class  QuizGame{
 
         System.out.println("=== The Quiz is now starting!!! ===");
 
+        // used iteration alongside with scanner.nextLine to print each question in the array individually allowing the user to enter their answer one at a time, seeing if their answer is right or wrong straightaway
+
         for (Question q : selectedCategory) {
             System.out.println(q.getQuestionText());
             String userAnswer = scanner.nextLine();
@@ -87,7 +91,7 @@ public class  QuizGame{
         System.out.println("You have reached the end of the quiz. Your final score was " + score + " points.");
         System.out.print("Would you like to select another category or exit the quiz. Please enter 'continue' or 'exit'");
 
-
+        // assigned a boolean variable (for a loop in case the user inputs an invalid answer) and selection to control the user input when selecting whether to continue or exit the program. 
         boolean invalidEndChoice = true;
 
         while (invalidEndChoice) {
