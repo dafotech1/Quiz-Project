@@ -1,3 +1,5 @@
+// used OOP to develop my Question Bank to be used in my main program
+
 public class QuestionBank{
     public static Question[] getPhysicsQuestions() {
         return new Question[]{
@@ -15,6 +17,7 @@ public class QuestionBank{
             new Question("Solve 3x - 7 = 11?","6", "Maths"),
             new Question("What is e\u2070?", "1", "Maths"),
             new Question("What is the smallest number divisible by 17 and 4?", "68", "Maths"),
+            new Question("What is the square root of minus 1?","i", "Maths")
         };
     }
 

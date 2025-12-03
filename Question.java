@@ -32,6 +32,6 @@ public class Question {
 
     //This is a method to check the user input matches the correct answers I set in my main program, returning true or false.
     public boolean checkAnswer(String input) {
-        return input.equalsIgnoreCase(correctAnswer);
+        return input.trim().equalsIgnoreCase(correctAnswer);
     }
 }

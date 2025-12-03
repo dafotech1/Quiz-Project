@@ -1,0 +1,77 @@
+public class QuizTest {
+    public static void main(String[] args) {
+
+    System.out.println("Test 1: Testing my question constructor");   
+    Question question = new Question("Is this constructor valid", "Yes", "Test");
+
+    if (question.getQuestionText().equals("Is this constructor valid")) {
+        System.out.println("PASS");
+    }else{
+        System.out.println("FAIL");
+    }
+
+    if (question.getAnswer().equals("Yes")) {
+        System.out.println("PASS");
+    }else{
+        System.out.println("FAIL");
+    }
+
+
+    System.out.println("Test 2: Testing my checkAnswer()");
+    Question question2 = new Question("Does checkAnswer() work with the set answer of 'Photon', with all variations of the answer ", "Photon", "Test");
+
+    if (question2.checkAnswer("Photon")) {
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
+
+    if (question2.checkAnswer("photon")) {
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
+
+    if (question2.checkAnswer("PHOTON   ")) {
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
+
+    if (question2.checkAnswer("Electron") == false ){
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
+
+    System.out.println("Test 3: Testing QuestionBank");
+    Question[] physicsQuestions = QuestionBank.getPhysicsQuestions();
+    Question[] mathsQuestions = QuestionBank.getMathsQuestions();
+    Question[] geographyQuestions = QuestionBank.getGeographyQuestions();
+    Question[] generalQuestions = QuestionBank.getGeneralQuestions();
+
+    if (physicsQuestions.length == 5 && physicsQuestions.length != 0) {
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
+
+    if (mathsQuestions.length == 5 && mathsQuestions.length != 0) {
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
+
+    if (geographyQuestions.length == 6 && geographyQuestions.length != 0) {
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
+
+    if (generalQuestions.length == 5 && generalQuestions.length != 0) {
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
+    }
+}

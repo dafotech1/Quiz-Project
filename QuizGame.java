@@ -39,25 +39,25 @@ public class  QuizGame{
         
         // user selection process
 
-        if (categoryChoice.equals("Physics") || categoryChoice.equals("1")) {
+        if (categoryChoice.trim().equalsIgnoreCase("Physics") || categoryChoice.equals("1")) {
             selectedCategory = physicsQuestions;
             invalidAnswer = false;
             System.out.println("You have selected Physics as your category of choice.");
         }
         
-        else if (categoryChoice.equals("Maths") || categoryChoice.equals("2")) {
+        else if (categoryChoice.trim().equalsIgnoreCase("Maths") || categoryChoice.equals("2")) {
             selectedCategory = mathsQuestions;
             invalidAnswer = false;
             System.out.println("You have selected Maths as your category of choice.");
         }
 
-        else if (categoryChoice.equals("Geography") || categoryChoice.equals("3")) {
+        else if (categoryChoice.trim().equalsIgnoreCase("Geography") || categoryChoice.equals("3")) {
             selectedCategory = geographyQuestions;
             invalidAnswer = false;
             System.out.println("You have selected Geography as your category of choice.");
         }
 
-        else if (categoryChoice.equals("General Knowledge") || categoryChoice.equals("4")){
+        else if (categoryChoice.trim().equalsIgnoreCase("General Knowledge") || categoryChoice.equals("4")){
             selectedCategory = generalQuestions;
             invalidAnswer = false;
             System.out.println("You have selected General Knowledge as your category of choice.");
@@ -82,6 +82,7 @@ public class  QuizGame{
                 score++;
                 System.out.println("Your score now is " + score + " points.");
             }
+            
             else {
                 System.out.println("Your answer is incorrect :( The correct answer was " + q.getAnswer());
                 System.out.println("Your score remains " + score + " points.");
