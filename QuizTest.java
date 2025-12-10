@@ -1,4 +1,7 @@
 public class QuizTest {
+
+    // QuizTest is a manual test used to check the validity of the core classes.
+    // It tests the Question constructor, checkAnswer(), QuestionBank arrays and score logic.
     public static void main(String[] args) {
 
     System.out.println("Test 1: Testing my question constructor");

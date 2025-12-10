@@ -1,4 +1,4 @@
-// used OOP to develop a 'Question Bank' to be used in my main program
+// used OOP to develop a 'Question Bank' as a storage section for all the predefined questions for each quiz category.
 
 public class QuestionBank{
 
@@ -12,7 +12,7 @@ public class QuestionBank{
         new Question("What is the exchange particle for the electromagnetic force?", "Photon", "Physics")
     };
 
-    private static final Question[] mathQuestions = {
+    private static final Question[] mathsQuestions = {
         new Question("What is the derivative of a constant?", "Zero", "Maths"),
         new Question("Solve 3x - 7 = 11?","6", "Maths"),
         new Question("What is e\u2070?", "1", "Maths"),
@@ -43,7 +43,7 @@ public class QuestionBank{
         }
     
     public static Question[] getMathsQuestions() {
-        return mathQuestions;
+        return mathsQuestions;
     }
 
     public static Question[] getGeographyQuestions() {

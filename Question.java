@@ -3,7 +3,7 @@
 */
 public class Question {
 
-    //Private classes means the following can only be used in Question.java (encapsulation) allowing for controlled access and cleaner code.
+    //Private fields means the following can only be used in Question.java (encapsulation) allowing for controlled access and cleaner code.
     private String questionText;
     private String correctAnswer;
     private String category;
@@ -30,7 +30,7 @@ public class Question {
         return correctAnswer;
     }
 
-    //This is a method to check the user input matches the correct answers I set in my main program, returning true or false allowing accidental spaces before or after the answer and any accidental capitals in the answer.
+    //This is a method to check the user input matches the correct answers I set in my main program, returning true or false, ignoring accidental spaces before or after the answer and any accidental capitals in the answer.
     public boolean checkAnswer(String input) {
         return input.trim().equalsIgnoreCase(correctAnswer);
     }
