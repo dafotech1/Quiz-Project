@@ -73,5 +73,19 @@ public class QuizTest {
     }else {
         System.out.println("FAIL");
     }
+
+    System.out.println("Test 4: Testing score logic");
+    int score = 0;
+    Question q = new Question("What is 2+2?","4","Maths");
+
+    if (q.checkAnswer("4")) {
+        score++;
+    }
+
+    if (score == 1) {
+        System.out.println("PASS");
+    }else{
+        System.out.println("Fail");
+    }
     }
 }
