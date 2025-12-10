@@ -1,7 +1,8 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class  QuizGame{
+
+    //Created a scanner declared outside my main so only one Scanner instance exists and not multiple everytime my program loops. 
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -11,9 +12,9 @@ public class  QuizGame{
         Question[] mathsQuestions = QuestionBank.getMathsQuestions();
         Question[] geographyQuestions = QuestionBank.getGeographyQuestions();
         Question[] generalQuestions = QuestionBank.getGeneralQuestions();
-        boolean continueProgram = true;
 
-        // While loop for my main program to allow the user to either continue the Quiz (select another category) or exit the program.
+        // While loop for my whole program to allow the user to either continue the Quiz (select another category) or exit the program when they complete the quiz.
+        boolean continueProgram = true;
         while (continueProgram) {
 
         System.out.println("""
@@ -26,18 +27,20 @@ public class  QuizGame{
                 3. Geography
                 4. General Knowledge
                 """);
-
+        
+        //Variables for my user selection  and loop processes
         boolean  invalidAnswer = true;
         Question selectedCategory[] = null;
         int score = 0;
         
-
+        //This while loop ensures the user inputs a valid answer whereby that be the category number or name, allowing random capitals or spaces in the answer.
         while (invalidAnswer) {
-        
+
+        //I have added scanner.nextLine() as I have found it stops the loop from breaking if they input an invalid answer
         String categoryChoice = scanner.nextLine();
         
         
-        // user selection process
+        // user selection process, with .trim() to allow any accidental spaces before or after the answer and .equalsIgnoreCase() to also ignore any accidental capitals
 
         if (categoryChoice.trim().equalsIgnoreCase("Physics") || categoryChoice.equals("1")) {
             selectedCategory = physicsQuestions;
@@ -79,7 +82,7 @@ public class  QuizGame{
 
             if (q.checkAnswer(userAnswer)) {
                 System.out.println(userAnswer + " is the correct answer!");
-                score++;
+                score++; //adds one to the score every time the user inputs the correct answer.
                 System.out.println("Your score now is " + score + " points.");
             }
             
@@ -90,9 +93,9 @@ public class  QuizGame{
         }
 
         System.out.println("You have reached the end of the quiz. Your final score was " + score + " points.");
-        System.out.print("Would you like to select another category or exit the quiz. Please enter 'continue' or 'exit'");
+        System.out.println("Would you like to select another category or exit the quiz. Please enter 'continue' or 'exit'");
 
-        // assigned a boolean variable (for a loop in case the user inputs an invalid answer) and selection to control the user input when selecting whether to continue or exit the program. 
+        // assigned a boolean variable (for a loop in case the user inputs an invalid answer) and selection to control the user input when selecting whether to continue or exit the program.
         boolean invalidEndChoice = true;
 
         while (invalidEndChoice) {

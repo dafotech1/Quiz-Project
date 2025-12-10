@@ -30,7 +30,7 @@ public class Question {
         return correctAnswer;
     }
 
-    //This is a method to check the user input matches the correct answers I set in my main program, returning true or false.
+    //This is a method to check the user input matches the correct answers I set in my main program, returning true or false allowing accidental spaces before or after the answer and any accidental capitals in the answer.
     public boolean checkAnswer(String input) {
         return input.trim().equalsIgnoreCase(correctAnswer);
     }

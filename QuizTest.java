@@ -1,8 +1,8 @@
 public class QuizTest {
     public static void main(String[] args) {
 
-    System.out.println("Test 1: Testing my question constructor");   
-    Question question = new Question("Is this constructor valid", "Yes", "Test");
+    System.out.println("Test 1: Testing my question constructor");
+    Question question = new Question("Is this constructor valid", "Yes", "Test"); //created a Question for the Question and Answer to be tested whether or not they store the intended value/string
 
     if (question.getQuestionText().equals("Is this constructor valid")) {
         System.out.println("PASS");
@@ -17,7 +17,7 @@ public class QuizTest {
     }
 
 
-    System.out.println("Test 2: Testing my checkAnswer()");
+    System.out.println("Test 2: Testing my checkAnswer()"); //testing whether my checkAnswer() works as intended... does it allow spaces, does it allow random capitals and simply does it allow incorrect or the exact correct answer?
     Question question2 = new Question("Does checkAnswer() work with the set answer of 'Photon', with all variations of the answer ", "Photon", "Test");
 
     if (question2.checkAnswer("Photon")) {
@@ -38,6 +38,11 @@ public class QuizTest {
         System.out.println("FAIL");
     }
 
+    if (question2.checkAnswer("   PhOTON   ")) {
+        System.out.println("PASS");
+    }else {
+        System.out.println("FAIL");
+    }
     if (question2.checkAnswer("Electron") == false ){
         System.out.println("PASS");
     }else {
@@ -45,30 +50,32 @@ public class QuizTest {
     }
 
     System.out.println("Test 3: Testing QuestionBank");
+
+    //Testing the existing arrays in QuestionBank to check whether the Questions are storing the correct amount of questions that I have created to be used.
     Question[] physicsQuestions = QuestionBank.getPhysicsQuestions();
     Question[] mathsQuestions = QuestionBank.getMathsQuestions();
     Question[] geographyQuestions = QuestionBank.getGeographyQuestions();
     Question[] generalQuestions = QuestionBank.getGeneralQuestions();
 
-    if (physicsQuestions.length == 5 && physicsQuestions.length != 0) {
+    if (physicsQuestions.length == 5) {
         System.out.println("PASS");
     }else {
         System.out.println("FAIL");
     }
 
-    if (mathsQuestions.length == 5 && mathsQuestions.length != 0) {
+    if (mathsQuestions.length == 5) {
         System.out.println("PASS");
     }else {
         System.out.println("FAIL");
     }
 
-    if (geographyQuestions.length == 6 && geographyQuestions.length != 0) {
+    if (geographyQuestions.length == 6) {
         System.out.println("PASS");
     }else {
         System.out.println("FAIL");
     }
 
-    if (generalQuestions.length == 5 && generalQuestions.length != 0) {
+    if (generalQuestions.length == 5) {
         System.out.println("PASS");
     }else {
         System.out.println("FAIL");
@@ -85,7 +92,8 @@ public class QuizTest {
     if (score == 1) {
         System.out.println("PASS");
     }else{
-        System.out.println("Fail");
+        System.out.println("FAIL");
     }
+    
     }
 }

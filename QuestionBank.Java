@@ -1,6 +1,8 @@
-// used OOP to develop my Question Bank to be used in my main program
+// used OOP to develop a 'Question Bank' to be used in my main program
 
 public class QuestionBank{
+
+    //made all my question arrays private so none of the other classes can directly modify them also helping me control how they are used.
 
     private static final Question[] physicsQuestions = {
         new Question("What particle has no electric charge?", "Neutron", "Physics"),
@@ -35,6 +37,7 @@ public class QuestionBank{
         new Question("What country has the most world cups?","Brazil", "General knowledge"),
     };
 
+    //created public getter methods for all of my Question arrays for controlled access in my QuizGame.java or any other files for that matter.
     public static Question[] getPhysicsQuestions() {
         return physicsQuestions;
         }
