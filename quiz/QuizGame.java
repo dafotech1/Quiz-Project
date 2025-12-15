@@ -1,3 +1,5 @@
+package quiz;
+
 import java.util.Scanner;
 
 //QuizGame is the main class that runs the actual quiz, handling the menu, category selection, outputting the questions and tracking the user's score

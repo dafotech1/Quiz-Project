@@ -1,3 +1,4 @@
+package quiz;
 // used OOP to develop a 'Question Bank' as a storage section for all the predefined questions for each quiz category.
 
 public class QuestionBank{
@@ -13,7 +14,7 @@ public class QuestionBank{
     };
 
     private static final Question[] mathsQuestions = {
-        new Question("What is the derivative of a constant?", "Zero", "Maths"),
+        new Question("What is the derivative of a constant?", "0", "Maths"),
         new Question("Solve 3x - 7 = 11?","6", "Maths"),
         new Question("What is e\u2070?", "1", "Maths"),
         new Question("What is the smallest number divisible by 17 and 4?", "68", "Maths"),

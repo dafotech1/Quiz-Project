@@ -1,3 +1,4 @@
+package quiz;
 public class QuizTest {
 
     // QuizTest is a manual test used to check the validity of the core classes.

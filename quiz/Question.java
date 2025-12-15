@@ -1,3 +1,5 @@
+package quiz;
+
 /*My question class is there to be used in my main program QuizGame.
 *Having it separate allows me to use the template to have multiple question objects.
 */
