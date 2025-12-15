@@ -13,13 +13,13 @@ The user selects a category (Physics, Maths, Geography, or General Knowledge) an
 How to Run:
 
 Compile all files:
-javac *.java
+javac src/quiz/*.java
 
 Run the quiz:
-java QuizGame
+java -cp src quiz.QuizGame
 
 Run the test class:
-java QuizTest
+java -cp src quiz.QuizTest
 
 ##Version Control
 
