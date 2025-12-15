@@ -20,3 +20,8 @@ java QuizGame
 
 Run the test class:
 java QuizTest
+
+##Version Control
+
+This project was also developed using Git for version control. The public GitHub
+repository is available at https://github.com/dafotech1/Quiz-Project
